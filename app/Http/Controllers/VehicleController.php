@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
 
-class VehicleController  extends ApiController {
+class VehicleController extends Controller {
 
  
 	protected function buildFailedValidationResponse(Request $request, array $errors)
@@ -82,11 +82,7 @@ class VehicleController  extends ApiController {
                 ['code' => $e->getCode(), 'message' => $e->getMessage()]
 				 , Response::HTTP_BAD_REQUEST); 
 			}
-			
-			//return response()->json( , Response::HTTP_OK); 
-            
-			//$nhtsa = $this->getData($url);
-			
+			 
 			$nhtsa = json_decode((string) $response->getBody(), true);
 			
 			$newarray['Count'] = $nhtsa['Count']; 
