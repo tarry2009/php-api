@@ -35,7 +35,7 @@ php artisan key:generate
 After that run the server with port 8080
 
 ```bash
-php artisn serve --port=8080
+php artisan serve --port=8080
 
 ```
 
